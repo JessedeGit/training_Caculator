@@ -7,16 +7,15 @@
 //
 
 import Foundation
-class CalculatorLogic {
+struct CalculatorLogic {
     
-    static func cal(calcMethod: String, displayValue: Double) -> Double? {
+    static func cal(calcMethod: String, displayValue: Double) -> Double {
         switch calcMethod{
         case "+/-": return displayValue * -1
-        case "AC": return 0
-        case "%": return 100
+        case "AC" : return 0
+        case "%"  : return displayValue / 100
         default:
-            print("switch exhust failed!")
-            return 0
+            fatalError("Switch exhusting failed!")
         }
     }
 }
