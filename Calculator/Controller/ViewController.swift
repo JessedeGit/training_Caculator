@@ -27,7 +27,11 @@ class ViewController: UIViewController {
     @IBAction func calcButtonPressed(_ sender: UIButton) {
         isFinishedTypingNumber = true
         if let calcMethod = sender.currentTitle {
-            displayValue = CalculatorLogic.cal(calcMethod: calcMethod, displayValue: displayValue)
+            if let returnValue =  CalculatorLogic.cal(calcMethod: calcMethod, displayValue: displayValue){
+                displayValue = returnValue
+            }else{
+                displayLabel.text = calcMethod
+            }
         }
     }
 
